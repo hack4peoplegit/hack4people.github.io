@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hack4People</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<meta name="theme-color" content="#76c4c6">
+<meta name="apple-mobile-web-app-status-bar-style" content="#76c4c6">
+
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tweencloud.css">
+<link rel="stylesheet" href="materialize/css/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="fullPage/jquery.fullPage.css"/>
+<link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+</head>
+<body>
+<div id="startup">
+<svg class="spinner-container" width="65px" height="65px" viewBox="0 0 52 52">
+<circle class="path" cx="26px" cy="26px" r="20px" fill="none" stroke-width="4px"></circle>
+</svg>
+</div>
+<div id="main">
+
+
+  <div class="navbar-fixed">
+ <nav class="themecolor z-depth-0">
+      <div class="nav-wrapper">
+
+      
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down">
+      <li ><a href="#"><i class="socicon-facebook"></i></a></li>
+         <li ><a href="#"><i class="socicon-twitter"></i></a></li>
+         <li ><a href="#"><i class="socicon-googleplus"></i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+      <li><a href="#" ><i class="socicon-facebook left"></i>Facebook</a></li>
+           <li><a href="#" ><i class="socicon-twitter left"></i>Twitter</a></li>
+           <li><a href="#" ><i class="socicon-googleplus left"></i>Google+</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+
+
+
+<div id="fullpage" style="position:relative;">
+
+
+  <div class="section sectionx" id="section0" style="position:relative; z-index:1;overflow-x: hidden;    background-image: url('img/dododle.svg');
+    background-size: cover;
+    background-repeat: no-repeat;">
+  <div class="container" id="cloudContainer">
+  <div class="row ">
+  <div class="col s8 offset-s2 m6 offset-m3  l4 offset-l4 " >
+  <img id="dp" class="responsive-img" src="img/logo.png" >
+  </div>
+  </div>
+  <div class="row ">
+  <h4 class="thin valign center-align" style="white-space: nowrap; font-weight:300">Lets make something good!</h4>
+  </div>
+  <div class="row ">
+  <div style="text-align:center; ">
+  <a class="waves-effect waves-light btn-large themecolor">Registration Starts Soon!</a>
+  </div>
+  </div>
+
+  </div> 
+  </div>
+
+<div class="section sectionx" id="section1" style="position:relative; z-index:1;">
+    <div class="container">
+                  <div class="row ">
+              
+                  </div>
+    </div>
+
+</div>
+
+
+
+<div class="section sectionx" id="section2"style="position:relative; z-index:1;">
+    <div class="container" >
+            <div class="row ">
+                  <div class="col s12 ">
+                      <h5 class="white-text flow-text" style="font-weight:300;padding:10px;font-size:30px; text-align: center;"> asdsadsa</h5>
+                  </div>
+            </div>
+            
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+  <script src="materialize/js/materialize.min.js"></script>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script type="text/javascript" src="fullPage/jquery.fullPage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+
+<script type="text/javascript" src="js/cloud.js"></script>
+
+<script type="text/javascript">
+$(".button-collapse").sideNav();
+function webteam(){
+ 
+}
+function cv(){
+
+}
+
+function resume(){
+  
+}
+
+</script>
+
+
+  <script type="text/javascript">
+
+function callback(){
+    return function(){$('#main').fadeIn();
+      $('#startup').remove();
+    }
+}
+$(document).ready(function(){
+
+$('#fullpage').fullpage({
+        responsiveWidth: 1100,
+        autoScrolling: false
+      });
+setTimeout(callback(), 1000);
+});
+
+  </script>
+</body>
+</html>
