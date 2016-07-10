@@ -14,6 +14,13 @@ html,body{background-color:#76c4c6;}
 .animate{transition:300ms linear all;}
 hss5{color:white;}
 p{color:#C3CAD9;}
+p.about{
+	font-size: 18px;
+	text-align: center;
+}
+.card-title{
+	font-size: 23px;
+}
 a{color:#373B44;}
 .fixed-action-btn ul{display:none;}
 .fixed-action-btn:hover ul{display:block;}
