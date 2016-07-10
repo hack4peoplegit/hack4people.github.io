@@ -9,6 +9,9 @@ h5.high::-moz-selection{background:#e67e22;}
 html,body{background-color:#76c4c6;}
 .headerimg{padding:0 50vh;}
 #section0{}
+.mainsection{
+	height: 100vh;
+}
 .sectionx{background-color:#76c4c6;}
 .sectionx:nth-of-type(2n){background-color:#ffffff;}
 .animate{transition:300ms linear all;}
