@@ -77,6 +77,14 @@ a{color:#373B44;}
 		.themecolor {
 			background-color:#76c4c6 !important;
 		}
+		.themecolordark {
+			background-color:#3899A2 !important;
+		}
+		.waves-effect.waves-greendark .waves-ripple {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: #A3B13D;
+    }
 		html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
