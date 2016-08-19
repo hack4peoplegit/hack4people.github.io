@@ -3,5 +3,6 @@
 	"icons": [
 	],
 	"theme_color": "#ffffff",
-	"display": "standalone"
+	"display": "standalone",
+	"gcm_sender_id": "200301084206"
 }
