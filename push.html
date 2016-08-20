@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDpUMmO_-Ux_5Cv_vCy8EAa-Tw6IzuFq9Q",
+        authDomain: "h4p-pushserver.firebaseapp.com",
+        databaseURL: "https://h4p-pushserver.firebaseio.com",
+        storageBucket: "",
+    };
+    firebase.initializeApp(config);
+    </script>
+</head>
+
+<body>
+    <h2 id="userl">Sign in</h2>
+    <button onClick="signins()">signin</button>
+    <button onClick="signouts()">signout</button>
+    <h2 id="userc">USERS : 0</h2>
+    <button onClick="send2()">Send to all</button>
+    <h2 id="sem"></h2>
+</body>
+<script type="text/javascript">
+function signins() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('https://www.googleapis.com/auth/plus.login');
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+
+        document.getElementById("userl").innerHTML = name + " (" + email + ")";
+
+        getids();
+
+    }).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        var email = error.email;
+        var credential = error.credential;
+        console.log(errorCode + " | " + errorMessage)
+    });
+
+}
+
+function signouts() {
+    firebase.auth().signOut().then(function() {
+        document.getElementById("userl").innerHTML = "Sign in";
+    }, function(error) {
+        console.log(error);
+    });
+}
+var ids=[];
+
+function getids() {
+    firebase.database().ref('/gcmids/').once('value').then(function(snapshot) {
+        console.log(snapshot.val());
+        console.log(snapshot.numChildren());
+        document.getElementById('userc').innerHTML = "USERS : " + snapshot.numChildren();
+        var i=0;
+        snapshot.forEach(function(childSnapshot) {
+            // key will be "ada" the first time and "alan" the second time
+            var key = childSnapshot.key;
+            ids[i]=key;
+            i++;
+            // childData will be the actual contents of the child
+            //var childData = childSnapshot.val();
+            
+        });
+    });
+}
+function send(){
+    console.log(ids);
+var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "https://android.googleapis.com/gcm/send", true);
+xhttp.setRequestHeader("Content-type", "application/json");
+xhttp.setRequestHeader("Authorization", "key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg");
+xhttp.send("registration_ids="+ids);
+document.getElementById('sem').innerHTML=xhttp.responseText;
+
+}
+function send2(){
+    var jsonData = "{\"registration_ids:\""+ids+"}";
+    console.log(jsonData)
+    //var obj = JSON.parse(jsonData);
+    $.ajax({
+    url: 'https://android.googleapis.com/gcm/send',
+    headers: {
+        'Authorization':'key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg',
+        'Content-Type':'application/json'
+    },
+    method: 'POST',
+    dataType: 'json',
+    data: JSON.stringify({registration_ids:ids}),
+    success: function(data){
+      document.getElementById('sem').innerHTML=data;
+    }
+  });
+}
+
+</script>
+
+</html>

@@ -3,6 +3,8 @@ if ('serviceWorker' in navigator) {
     console.log('Service Worker is supported');
     navigator.serviceWorker.register('sw.js').then(function(reg) {
         console.log(':^)', reg);
+
+
         reg.pushManager.subscribe({
             userVisibleOnly: true
         }).then(function(sub) {
@@ -24,6 +26,8 @@ if ('serviceWorker' in navigator) {
 		    "registrationId": registrationId
 		  });
         });
+
+        
     }).catch(function(error) {
         console.log(':^(', error);
     });
