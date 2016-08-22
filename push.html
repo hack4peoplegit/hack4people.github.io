@@ -183,6 +183,9 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 }
+function send7(){
+    console.log('curl -X POST -H "Content-Type: application/json" -H "Authorization: key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg" -H "Cache-Control: no-cache" -H "Postman-Token: a08d3594-01b5-4c50-81a8-8477fc475ba3" -d "{\"registration_ids\":'+ids+'}" "https://gcm-http.googleapis.com/gcm/send"');
+}
 </script>
 
 </html>
