@@ -4,8 +4,8 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js').then(function(reg) {
         console.log(':^)', reg);
 
-
-        reg.pushManager.subscribe({
+navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+        serviceWorkerRegistration.pushManager.subscribe({
             userVisibleOnly: true
         }).then(function(sub) {
            // console.log('endpoint:', sub.endpoint);
@@ -26,6 +26,7 @@ if ('serviceWorker' in navigator) {
 		    "registrationId": registrationId
 		  });
         });
+    });
 
         
     }).catch(function(error) {
