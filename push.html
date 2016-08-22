@@ -22,7 +22,7 @@
     <button onClick="signouts()">signout</button>
     <h2 id="userc">USERS : 0</h2>
     <button onClick="send7()">Send to all</button>
-    <h2 id="sem"></h2>
+    <p id="sem"></p>
 </body>
 <script type="text/javascript">
 function signins() {
@@ -184,8 +184,11 @@ $.ajax(settings).done(function (response) {
 });
 }
 function send7(){
-    console.log('curl -X POST -H "Content-Type: application/json" -H "Authorization: key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg" -H "Cache-Control: no-cache" -H "Postman-Token: a08d3594-01b5-4c50-81a8-8477fc475ba3" -d "{\"registration_ids\":'+ids+'}" "https://gcm-http.googleapis.com/gcm/send"');
-    document.getElementById('sem').innerHTML='curl -X POST -H "Content-Type: application/json" -H "Authorization: key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg" -H "Cache-Control: no-cache" -H "Postman-Token: a08d3594-01b5-4c50-81a8-8477fc475ba3" -d "{\"registration_ids\":'+ids+'}" "https://gcm-http.googleapis.com/gcm/send"';
+
+var c="curl -X POST -H 'Content-Type: application/json' -H 'Authorization: key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg' -H 'Cache-Control: no-cache' -H 'Postman-Token: a08d3594-01b5-4c50-81a8-8477fc475ba3' -d '{\"registration_ids\":"+JSON.stringify(ids)+"}' 'https://gcm-http.googleapis.com/gcm/send'";
+
+    console.log(c);
+    document.getElementById('sem').innerHTML=c;
 }
 </script>
 
