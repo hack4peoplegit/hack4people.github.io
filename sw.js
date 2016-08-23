@@ -9,7 +9,7 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('push', function(event) {
   console.log('Push message', event);
     event.waitUntil(
-    fetch("http://iedc.sahrdaya.ac.in/hack4people/api/getnotification.php").then(function(response) {  
+    fetch("https://h4papi.herokuapp.com/getnotification.php").then(function(response) {  
       if (response.status !== 200) {  
         // Either show a message to the user explaining the error  
         // or enter a generic message and handle the
