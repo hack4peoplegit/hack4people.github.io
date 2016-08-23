@@ -24,7 +24,9 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
             firebase.database().ref('gcmids/'+registrationId).set({
 		    "endpoint": endpoint.substring(0),
 		    "registrationId": registrationId
-		  });
+		  },function(snapshot) {
+		  	 Materialize.toast('Notifications enabled', 2000)
+		  	});
         });
     });
 
