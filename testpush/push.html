@@ -21,7 +21,10 @@
     <button onClick="signins()">signin</button>
     <button onClick="signouts()">signout</button>
     <h2 id="userc">USERS : 0</h2>
-    <button onClick="send7()">Send to all</button>
+    <input type="password" name="password" id="pass"/>
+    <input type="text" name="title" id="title"/>
+    <input type="text" name="message" id="message"/>
+    <button onClick="set()">Send to all</button>
     <p id="sem"></p>
 </body>
 <script type="text/javascript">
@@ -76,119 +79,26 @@ function getids() {
         });
     });
 }
-function send(){
-    console.log(ids);
-var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://android.googleapis.com/gcm/send", true);
-xhttp.setRequestHeader("Content-type", "application/json");
-xhttp.setRequestHeader("Authorization", "key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg");
-xhttp.send("registration_ids="+ids);
-document.getElementById('sem').innerHTML=xhttp.responseText;
 
-}
-function send2(){
-    var jsonData = "{\"registration_ids:\""+ids+"}";
-    console.log(jsonData)
-    //var obj = JSON.parse(jsonData);
-    $.ajax({
-    url: 'https://gcm-http.googleapis.com/gcm/send',
-    headers: {
-        'Authorization':'key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg',
-        'Content-Type':'application/json'
-    },
-    method: 'POST',
-    dataType: 'json',
-    data: jsonData,
-    success: function(data){
-      document.getElementById('sem').innerHTML=data;
-    }
-  });
-}
-function send3(){
-    var jsonData = JSON.stringify({registration_ids:ids});
-    jQuery.post("https://gcm-http.googleapis.com/gcm/send",jsonData )
-    .done(function( data ) {
-         alert(data+"");
-    });
- 
-}
-function send4(){
-    var jsonData = JSON.stringify({registration_ids:ids});
-    //console.log("a -> "+jsonData);
-   // console.log("b -> "+JSON.stringify(ids));
-    //var obj = JSON.parse(jsonData);
-    $.ajax({
-    url: 'https://gcm-http.googleapis.com/gcm/send',
-    headers: {
-        'Authorization':'key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg',
-        'Content-Type':'application/json'
-    },
-    method: 'post',
-    dataType: 'json',
-    data: jsonData,
-    success: function(data){
-      document.getElementById('sem').innerHTML=data;
-    }
-  });
-}
-
-
-function send5() {
-    var data = JSON.stringify({
-  "registration_ids": [
-    "cJt70UZJE4g:APA91bHyCF_dCNSMps7BG1og24SHzRU1hYZGSXDg2u1WhnrDnB-mp8mJbekCcICfbWfDWxVwSylOk0hbG45uwHREanYtZpq-zahIKb6QyKhiVoV19aXwNUp-ll7rmWxkGhZeKWilNeni",
-    "d-884Cz903g:APA91bHCciB67jx4jFKO3BGfxZIaYIz8GuQt4VquLPfssBZmRk75xj-6vjDexcxFurW2dotzdAP8Ms3HRcpR_3AfJ8t1Xfhr6T7Tbvp4dKV1FDDHYJwws7eJv2vFQBZjoVFskwO8v0m1",
-    "dFdt34ocomo:APA91bHneJdfIeu9TsHv_xLmGLDAn25rWAxxDDX1Q42Au6rWatpoYRuZfqmeB5yQWvejBA7RRW4vn_bEcfzkUZAIBi5PjA3fT84GdM_eMTqZCj9sjhEJKIDi96xXXc67GsKp7OJOU2KO",
-    "dMFScLZqN4g:APA91bFqnVYC5UmlAXBHJqdI0NZqKVUaXu5vFLmmsmJ1Xc6I8StmrB8uLsRCc59jHJiLobOUwTQNZ9lZGIfVz5ndBJjSP-eIpt8lxplJKXDFLi5Yd7PYDBX8KlwkLjXjjFi5V549rf_1",
-    "eEBbU8xyD40:APA91bHblIcQJM7_5AP1lVn2mEGgLXb4QDBAuB0tCn5gbHRrKZ2GMTphaNGFaFT9IqE4K0gGL65qMBYHVINMkiHyrucY1xgYL5lAZYbKf9b0_xAmZIOsOy2eMQacqjE_Q9Zn1b2vhOzI",
-    "eHQy9xrGGZw:APA91bEM-D0cQN53skWyVBDQLiXgDaR1TRVtolRAZuq6smfSr2FZpECmII6XSiYF1zzZPOKCUytntgDtZ4MLZKqNynfUufKsPSl8ua65kzOO6KQOmL4UwobwE-GZbL3S65aboK2sBHvx",
-    "fUdvr-bGXCM:APA91bEzEMCWluw1AEXbyq4A0-7LOOteZm5SeAZgFB4O1dF1Urq-1yBq2or9T_yJg25lG9wWJ8cEsFRYJs2tmCkA9PdZrqUbc8L0aTLvx0tEcWa7e9oSpZLSMMHwZ67nHZcw4IP_2Awy"
-  ]
-});
-
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("POST", "https://gcm-http.googleapis.com/gcm/send");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Authorization", "key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg");
-xhr.setRequestHeader("Access-Control-Allow-Origin", "http://localhost");
-xhr.send(data);
-}
-
-
-function send6(){
-    var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://gcm-http.googleapis.com/gcm/send",
-  "method": "POST",
-  "headers": {
-    "content-type": "application/json",
-    "authorization": "key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg",
-    "cache-control": "no-cache",
-    "postman-token": "fc794a14-37e4-90df-c3bf-88551a4249fc"
-  },
-  "processData": false,
-  "data": "{\"registration_ids\":[\"cJt70UZJE4g:APA91bHyCF_dCNSMps7BG1og24SHzRU1hYZGSXDg2u1WhnrDnB-mp8mJbekCcICfbWfDWxVwSylOk0hbG45uwHREanYtZpq-zahIKb6QyKhiVoV19aXwNUp-ll7rmWxkGhZeKWilNeni\",\"d-884Cz903g:APA91bHCciB67jx4jFKO3BGfxZIaYIz8GuQt4VquLPfssBZmRk75xj-6vjDexcxFurW2dotzdAP8Ms3HRcpR_3AfJ8t1Xfhr6T7Tbvp4dKV1FDDHYJwws7eJv2vFQBZjoVFskwO8v0m1\",\"dFdt34ocomo:APA91bHneJdfIeu9TsHv_xLmGLDAn25rWAxxDDX1Q42Au6rWatpoYRuZfqmeB5yQWvejBA7RRW4vn_bEcfzkUZAIBi5PjA3fT84GdM_eMTqZCj9sjhEJKIDi96xXXc67GsKp7OJOU2KO\",\"dMFScLZqN4g:APA91bFqnVYC5UmlAXBHJqdI0NZqKVUaXu5vFLmmsmJ1Xc6I8StmrB8uLsRCc59jHJiLobOUwTQNZ9lZGIfVz5ndBJjSP-eIpt8lxplJKXDFLi5Yd7PYDBX8KlwkLjXjjFi5V549rf_1\",\"eEBbU8xyD40:APA91bHblIcQJM7_5AP1lVn2mEGgLXb4QDBAuB0tCn5gbHRrKZ2GMTphaNGFaFT9IqE4K0gGL65qMBYHVINMkiHyrucY1xgYL5lAZYbKf9b0_xAmZIOsOy2eMQacqjE_Q9Zn1b2vhOzI\",\"eHQy9xrGGZw:APA91bEM-D0cQN53skWyVBDQLiXgDaR1TRVtolRAZuq6smfSr2FZpECmII6XSiYF1zzZPOKCUytntgDtZ4MLZKqNynfUufKsPSl8ua65kzOO6KQOmL4UwobwE-GZbL3S65aboK2sBHvx\",\"fUdvr-bGXCM:APA91bEzEMCWluw1AEXbyq4A0-7LOOteZm5SeAZgFB4O1dF1Urq-1yBq2or9T_yJg25lG9wWJ8cEsFRYJs2tmCkA9PdZrqUbc8L0aTLvx0tEcWa7e9oSpZLSMMHwZ67nHZcw4IP_2Awy\"]}"
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-}
 function send7(){
 
 var c="curl -X POST -H 'Content-Type: application/json' -H 'Authorization: key=AIzaSyDqPo2Y2dwtOfc34Z8nPY2pTx5R9uk28Eg' -H 'Cache-Control: no-cache' -H 'Postman-Token: a08d3594-01b5-4c50-81a8-8477fc475ba3' -d '{\"registration_ids\":"+JSON.stringify(ids)+"}' 'https://gcm-http.googleapis.com/gcm/send'";
 
     console.log(c);
     document.getElementById('sem').innerHTML=c;
+}
+
+function set(){
+    var myKeyVals = { title : document.getElementById('title').value, message : document.getElementById('message').value, password : document.getElementById('pass').value}
+
+    var saveData = $.ajax({
+      type: 'POST',
+      url: "http://iedc.sahrdaya.ac.in/hack4people/api/setnotification.php",
+      data: myKeyVals,
+      dataType: "text",
+      success: function(resultData) { document.getElementById('sem').innerHTML=resultData; }
+});
+saveData.error(function() { document.getElementById('sem').innerHTML="Something went wrong"; });
 }
 </script>
 
