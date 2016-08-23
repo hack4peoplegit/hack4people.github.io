@@ -51,7 +51,7 @@ self.addEventListener('push', function(event) {
 self.addEventListener('notificationclick', function(event) {
     console.log('Notification click: tag ', event.notification.tag);
     event.notification.close();
-    var url = 'hack4people.com';
+    var url = 'https://hack4people.com';
     event.waitUntil(
         clients.matchAll({
             type: 'window'
