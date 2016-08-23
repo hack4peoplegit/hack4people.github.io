@@ -1,8 +1,8 @@
 {
 	"notification":true,
 	"error":false,
-	"title":"Hello ann mary paul",
-	"message":"poda",
+	"title":"Hello",
+	"message":"test",
 	"icon":"favi.png",
 	"tag":"mytag"
 }
