@@ -9,7 +9,6 @@ self.addEventListener('install', function(event) {
        '/manifest.json',
        '/min/plugin-min.css',
        '/min/custom-min.css',
-       'https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css',
        '/img/parallax.jpg',
        '/min/plugin-min.js',
        '/min/custom-min.js',
@@ -21,9 +20,9 @@ self.addEventListener('install', function(event) {
        '/img/kila.jpg'
 
      ]);
-   }) 
+   })
  );
-  console.log('Installed', event); 
+  console.log('Installed', event);
 });
 self.addEventListener('activate', function(event) {
   console.log('Activated', event);
