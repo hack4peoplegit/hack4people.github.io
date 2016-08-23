@@ -18,7 +18,6 @@ self.addEventListener('install', function(event) {
        '/img/sahhead.png',
        '/img/iedc.svg',
        '/img/kila.jpg'
-
      ]);
    })
  );
