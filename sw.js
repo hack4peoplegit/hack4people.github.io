@@ -23,7 +23,7 @@ self.addEventListener('install', function(event) {
      ]);
    })
  );
-  console.log('Installed', event);
+  console.log('Installed', event); 
 });
 self.addEventListener('activate', function(event) {
   console.log('Activated', event);
