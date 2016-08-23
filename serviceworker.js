@@ -21,10 +21,12 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 		}
 			console.log(endpoint.substring(0));
 			console.log(registrationId);
+			Materialize.toast('Notifications', 2000)
             firebase.database().ref('gcmids/'+registrationId).set({
 		    "endpoint": endpoint.substring(0),
 		    "registrationId": registrationId
 		  },function(snapshot) {
+		  	console.log("stored");
 		  	 Materialize.toast('Notifications enabled', 2000)
 		  	});
         });
