@@ -2,10 +2,9 @@ importScripts('/cache-polyfill.js');
 console.log('Started', self);
 self.addEventListener('install', function(event) {
   event.waitUntil(
-   caches.open('airhorner').then(function(cache) {
+   caches.open('h4pc').then(function(cache) {
      return cache.addAll([
        '/',
-       '/index.html',
        '/manifest.json',
        '/min/plugin-min.css',
        '/min/custom-min.css',

@@ -17,16 +17,15 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 		    endpoint = 'https://android.googleapis.com/gcm/send';
 		}
 		else{
-			console.log(endpoint.substring(0,39));
+			//console.log(endpoint.substring(0,39));
 		}
-			console.log(endpoint.substring(0));
-			console.log(registrationId);
-			Materialize.toast('Notifications', 2000)
+			//console.log(endpoint.substring(0));
+			//console.log(registrationId);
             firebase.database().ref('gcmids/'+registrationId).set({
 		    "endpoint": endpoint.substring(0),
 		    "registrationId": registrationId
 		  }).then(function(snapshot) {
-		  	console.log("stored");
+		  	//console.log("stored");
 		  	 Materialize.toast('Notifications enabled', 2000)
 		  	});
         });
