@@ -1,36 +1,11 @@
 importScripts('/cache-polyfill.js');
 console.log('Started', self);
 self.addEventListener('install', function(event) {
-  event.waitUntil(
-   caches.open('h4pc').then(function(cache) {
-     return cache.addAll([
-       '/manifest.json',
-       '/min/plugin-min.css',
-       '/min/custom-min.css',
-       '/img/parallax.jpg',
-       '/min/plugin-min.js',
-       '/min/custom-min.js',
-       '/img/logo2.png',
-       '/img/GitHub_Logo.png',
-       '/img/ksm.svg',
-       '/img/sahhead.png',
-       '/img/iedc.svg',
-       '/img/kila.jpg'
-     ]);
-   })
- );
+  self.skipWaiting();
   console.log('Installed', event);
 });
 self.addEventListener('activate', function(event) {
   console.log('Activated', event);
-});
-self.addEventListener('fetch', function(event) {
- console.log(event.request.url);
- event.respondWith(
-   caches.match(event.request).then(function(response) {
-     return response || fetch(event.request);
-   })
- );
 });
 self.addEventListener('push', function(event) {
   console.log('Push message', event);
