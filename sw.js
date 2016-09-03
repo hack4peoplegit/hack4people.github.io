@@ -4,7 +4,6 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
    caches.open('h4pc').then(function(cache) {
      return cache.addAll([
-       '/',
        '/manifest.json',
        '/min/plugin-min.css',
        '/min/custom-min.css',
