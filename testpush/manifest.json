@@ -1,8 +1,0 @@
-{
-	"name": "Hack4People",
-	"icons": [
-	],
-	"theme_color": "#ffffff",
-	"display": "standalone",
-	"gcm_sender_id": "200301084206"
-}

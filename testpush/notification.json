@@ -1,8 +1,0 @@
-{
-	"notification":true,
-	"error":false,
-	"title":"Hello",
-	"message":"test",
-	"icon":"favi.png",
-	"tag":"mytag"
-}
