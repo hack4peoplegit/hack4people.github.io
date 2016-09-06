@@ -24,6 +24,34 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
+.view-cap,
+.view-container-border {
+    background-color: black;
+}
+
+.mv-daynames-table {
+    color: white;
+    background: black;
+}
+
+.mv-event-container {
+    border-top: 1px solid black;
+}
+
+.st-bg {
+    background: black;
+}
+
+.st-bg-today {
+    background: yellow;
+    border-left: 1px solid yellow;
+    border-right: 1px solid yellow;
+}
+
+.st-dtitle {
+    background: white;
+}
 </style>
 
 <body id="top" class="scrollspy">
@@ -41,6 +69,7 @@ body {
                     <a id="logo-container" class="brand-logo">Hack4People</a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="#intro">Event</a></li>
+                        <li><a href="#articles">Articles</a></li>
                         <li hidden><a href="#mentors">Mentors</a></li>
                         <li><a href="#team">Sponsors</a></li>
                         <li><a href="https://www.facebook.com/hack4people" target="_blank"><i class="socicon-facebook"></i></a></li>
@@ -48,6 +77,7 @@ body {
                     </ul>
                     <ul id="nav-mobile" class="side-nav">
                         <li><a href="#intro">Event</a></li>
+                        <li><a href="#articles">Articles</a></li>
                         <li hidden><a href="#mentors">Mentors</a></li>
                         <li><a href="#team">Sponsors</a></li>
                         <li><a href="https://www.facebook.com/hack4people" target="_blank">Facebook</a></li>
@@ -115,104 +145,16 @@ body {
         <div class="container">
             <h2 class="header text_b">Mentors </h2>
             <div class="row">
-                <div class="col s12 m3">
+                <div class="col s12 m4">
                     <div class="card card-avatar">
                         <div class="waves-effect waves-block waves-light">
                             <img class="activator" src="img/avatar1.png">
                         </div>
                         <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Flash <br/>
-                            <small><em><a class="red-text text-darken-1" href="#">CEO</a></em></small></span>
+                            <span class="card-title grey-text text-darken-4">Name<br/>
+                            <small><em><a class="red-text text-darken-1" >Position</a></em></small></span>
                             <p>
-                                <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                    <i class="fa fa-facebook-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                    <i class="fa fa-twitter-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                    <i class="fa fa-google-plus-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                    <i class="fa fa-linkedin-square"></i>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card card-avatar">
-                        <div class="waves-effect waves-block waves-light">
-                            <img class="activator" src="img/avatar2.png">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Cat Woman<br/>
-                            <small><em><a class="red-text text-darken-1" href="#">Designer</a></em></small>
-                        </span>
-                            <p>
-                                <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                    <i class="fa fa-facebook-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                    <i class="fa fa-twitter-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                    <i class="fa fa-google-plus-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                    <i class="fa fa-linkedin-square"></i>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card card-avatar">
-                        <div class="waves-effect waves-block waves-light">
-                            <img class="activator" src="img/avatar3.png">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">
-                            Capt. America <br/>
-                            <small><em><a class="red-text text-darken-1" href="#">CMO</a></em></small></span>
-                            <p>
-                                <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                    <i class="fa fa-facebook-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                    <i class="fa fa-twitter-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                    <i class="fa fa-google-plus-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                    <i class="fa fa-linkedin-square"></i>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card card-avatar">
-                        <div class="waves-effect waves-block waves-light">
-                            <img class="activator" src="img/avatar4.png">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Robin<br/>
-                            <small><em><a class="red-text text-darken-1" href="#">Developer</a></em></small></span>
-                            <p>
-                                <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                    <i class="fa fa-facebook-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                    <i class="fa fa-twitter-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                    <i class="fa fa-google-plus-square"></i>
-                                </a>
-                                <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                    <i class="fa fa-linkedin-square"></i>
-                                </a>
+                               ljkasdghklasg ahklsgd klasgd kl asgdhk asgdl khasgdhk lsghkladbgs hkfj; asdgj;g fjksdajlgfaskldf ksdag
                             </p>
                         </div>
                     </div>
@@ -220,6 +162,15 @@ body {
             </div>
         </div>
     </div>
+    <!--Parallax-->
+    <div class="parallax-container hide-on-med-and-down">
+        <div class="parallax"><img class="responsive-img" src="img/india.jpg"></div>
+    </div>
+    <div class="hide-on-large-only">
+    	<img class="responsive-img" src="img/india.jpg">
+    </div>
+
+
     <div class="section scrollspy" id="articles">
         <div class="container">
             <h2 class="header text_b">Articles </h2>
@@ -370,21 +321,31 @@ body {
             <div class="row center">
                 <h5 class="valign center-align" style="white-space: nowrap; "> Our awesome sponsors</h5>
                 <br>
-                <img src="img/GitHub_Logo.png" href="" style="height:70px; margin:30px;" />
+                <a class="valign center-align" href="https://github.com/" target="_blank">
+                    <img src="img/GitHub_Logo.png" href="" style="height:70px; margin:30px;" /></a>
             </div>
             <div class="row center">
                 <h5 class="valign center-align" style="white-space: nowrap; "> Organised by </h5>
                 <br>
                 <div class="col s12  m8 offset-m2  l8 offset-l2">
-                    <h5 class="valign center-align"><img src="img/ksm.svg" href="" style="height:180px; margin:30px;"/>
-                           <img src="img/sahhead.png" href="" style="height:70px; margin:30px;"/>
-              <img src="img/iedc.svg" href="" style="height:180px; margin:30px;"/></h5>
+                    <a class="valign center-align" href="https://startupmission.kerala.gov.in/" target="_blank"><img src="img/ksm.svg" style="height:180px; margin:30px;" /></a>
+                    <a class="valign center-align" href="http://www.sahrdaya.ac.in/" target="_blank">
+                        <img src="img/sahhead.png" style="height:70px; margin:30px;" />
+                    </a>
+                    <a class="valign center-align" href="http://iedc.sahrdaya.ac.in/" target="_blank">
+                        <img src="img/iedc.svg" style="height:180px; margin:30px;" /></a>
                 </div>
             </div>
             <div class="row center">
                 <h5 class="valign center-align" style="white-space: nowrap; "> In collaboration with </h5>
-                <div class="col s12 m8 offset-m2  l8 offset-l2">
-                    <h5 class="valign center-align"><img src="img/kila.jpg" href="" style="height:210px;margin:30px;"/></h5>
+                <div class="col s12 l4">
+                    <a class="valign center-align" href="http://www.kilaonline.org/" target="_blank"><img src="img/kila.jpg" href="" style="width:210px;margin:30px;" /></a>
+                </div>
+                <div class="col s12 l4">
+                    <a class="valign center-align" href="http://mygov.in" target="_blank"><img src="img/my-gov-logo.png" href="" style="width:210px;margin:30px;" /></a>
+                </div>
+                <div class="col s12 l4">
+                    <a class="valign center-align" href="http://www.digitalindia.gov.in/" target="_blank"><img src="img/E1-F.png" href="" style="width:230px;margin:30px;" /></a>
                 </div>
             </div>
         </div>
@@ -393,7 +354,7 @@ body {
     <footer class="page-footer white">
         <div class="footer-copyright themecolordarks">
             <div class="container">
-                Contact: +91 9946983296
+                Contact: Jibin Jose : +91 9946983296, Neeraj MG : +91 8129955899 (6pm-12pm)
                 <a class="grey-text text-lighten-4 right" target="_blank" href="http://hackcodeofconduct.org/324-hack4people">Code of Conduct</a>
             </div>
         </div>
